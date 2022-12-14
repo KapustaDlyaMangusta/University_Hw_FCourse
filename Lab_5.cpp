@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Dinner.cpp"
-#include "Candy.h"
 
 using namespace std;
 

@@ -1,5 +1,4 @@
 #include <iostream>
-#include "Dinner.h"
 #include "Candy.cpp"
 
 using namespace std;
@@ -7,20 +6,20 @@ using namespace std;
 class Dinner
 {
 private:
-	string _day;
-	string _time;
+	string day;
+	string time;
 public:
 	Dinner() {};
 
 	Dinner(string day, string time) {
-		_day = day;
-		_time = time;
+		day = day;
+		time = time;
 	}
-	Candy Candies[5];
+	Candy candies[5];
 
 	void SetCandies(Candy arr[]) {
 		for (int i = 0; i < 5; i++) {
-			Candies[i] = arr[i];
+			candies[i] = arr[i];
 		}
 	}
 
@@ -29,17 +28,17 @@ public:
 		for (int i = 0; i < 5; i++) {
 			for (int j = i + 1; j < 5; j++)
 			{
-				if (Candies[j].GetPrice() < Candies[i].GetPrice()) {
-					temp = Candies[i].GetPrice();
-					Candies[i].SetPrice(Candies[j].GetPrice());
-					Candies[j].SetPrice(temp);
+				if (candies[j].GetPrice() < candies[i].GetPrice()) {
+					temp = candies[i].GetPrice();
+					candies[i].SetPrice(candies[j].GetPrice());
+					candies[j].SetPrice(temp);
 				}
 			}
 		}
 
 		for (int i = 4; i > 1; i--) {
 			int  number = 1;
-			cout << "On the " << number << " place: " << Candies[i].GetName() << " - " << Candies[i].GetPrice() << endl;
+			cout << "On the " << number << " place: " << candies[i].GetName() << " - " << candies[i].GetPrice() << endl;
 			number++;
 		}
 	}
@@ -49,25 +48,25 @@ public:
 		for (int i = 0; i < 5; i++) {
 			for (int j = i + 1; j < 5; j++)
 			{
-				if (Candies[j].GetAmount() < Candies[i].GetAmount()) {
-					temp = Candies[i].GetAmount();
-					Candies[i].SetAmount(Candies[j].GetAmount());
-					Candies[j].SetAmount(temp);
+				if (candies[j].GetAmount() < candies[i].GetAmount()) {
+					temp = candies[i].GetAmount();
+					candies[i].SetAmount(candies[j].GetAmount());
+					candies[j].SetAmount(temp);
 				}
 			}
 		}
 
-		cout << "Candies:\n" << endl;
+		cout << "candies:\n" << endl;
 
 		for (int i = 0; i < 5; i++) {
-			cout << Candies[i].GetName() << " - " << Candies[i].GetAmount() << endl;
+			cout << candies[i].GetName() << " - " << candies[i].GetAmount() << endl;
 		}
 	}
 
 	void Eat() {
 		for (int i = 0; i < 5; i++) {
-			cout << Candies[i].GetName() << " Eat: \n" << endl;
-			Candies[i].Ate();
+			cout << candies[i].GetName() << " Eat: \n" << endl;
+			candies[i].Ate();
 		}
 	}
 };

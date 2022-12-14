@@ -14,47 +14,47 @@ enum CandyType
 class Candy
 {
 private:
-	string _name;
-	int _mass_in_grams;
-	int _amount;
-	double _price;
+	string name;
+	int mass_in_grams;
+	int amount;
+	double price;
 public:
 	Candy() {}
 	Candy(string name, int mass_in_grams, int amount, double price) {
-		_name = name;
-		_mass_in_grams = mass_in_grams;
-		_amount = amount;
-		_price = price;
+		name = name;
+		mass_in_grams = mass_in_grams;
+		amount = amount;
+		price = price;
 	}
 
 	CandyType Type = BAR;
 
 	string GetName() {
-		return _name;
+		return name;
 	}
 
 	int GetMass() {
-		return _mass_in_grams;
+		return mass_in_grams;
 	}
 
 	int GetAmount() {
-		return _amount;
+		return amount;
 	}
 
 	double GetPrice() {
-		return _price;
+		return price;
 	}
 
 	void SetPrice(double value) {
-		_price = value;
+		price = value;
 	}
 
 	void SetAmount(double value) {
-		_amount = value;
+		amount = value;
 	}
 
 	void Ate() {
-		if (_mass_in_grams * _amount > 2000) {
+		if (mass_in_grams * amount > 2000) {
 			cout << "You are on a diet!" << endl;
 		}
 		cout << "What a delicious candy!" << endl;
